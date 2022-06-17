@@ -1,5 +1,6 @@
 import Head from "next/head";
 import FormManager from "../components/FormManager";
+import Instruction from "../components/Instruction";
 
 export default function Home() {
   return (
@@ -11,7 +12,7 @@ export default function Home() {
       </Head>
 
       <main>
-        <FormManager />
+        <Instruction />
       </main>
 
       <footer></footer>

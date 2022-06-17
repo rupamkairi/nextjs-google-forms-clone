@@ -1,11 +1,10 @@
 import { useState } from "react";
-import formData from "../data/form1.json";
 import CheckBoxGroup from "./FormComponents/CheckBoxGroup";
 import RadioGroup from "./FormComponents/RadioGroup";
 import SelectOption from "./FormComponents/SelectOption";
 import TextBox from "./FormComponents/TextBox";
 
-export default function FormManager() {
+export default function FormManager({ id, formData }) {
   const [validationTrigger, setValidationTrigger] = useState(0);
   const [invalids, setInvalids] = useState(null);
   const [fieldValues, setFieldValues] = useState({});
@@ -13,17 +12,7 @@ export default function FormManager() {
   return (
     <div className="container mx-auto">
       <h1 className="font-black text-2xl mb-8">{formData.header}</h1>
-      <form
-        onSubmit={(e) => {
-          setInvalids(0);
-          e.preventDefault();
-          setValidationTrigger(validationTrigger + 1);
-
-          if (!invalids) {
-            console.log("submit");
-          }
-        }}
-      >
+      <form>
         {formData.fields.map((field, key) => (
           <div key={key}>
             {
@@ -72,9 +61,13 @@ export default function FormManager() {
             setValidationTrigger(validationTrigger + 1);
             setInvalids(0);
 
-            if (!invalids) {
-              console.log("submit");
-              console.log(fieldValues);
+            if (invalids === 0) {
+              fetch(`/api/form/${id}`, {
+                method: "POST",
+                body: JSON.stringify(fieldValues),
+              })
+                .then((res) => res.json())
+                .then((data) => console.log(data));
             }
           }}
         >
