@@ -1,0 +1,67 @@
+{
+  "id": "1001",
+  "header": "Form Header",
+  "fields": [
+    {
+      "title": "Text Field",
+      "name": "Text Field Name",
+      "label": "Text Field Label",
+      "type": "text",
+      "required": true
+    },
+    {
+      "title": "Checkbox Group",
+      "name": "Checkbox Group Name",
+      "label": "Checkbox Group Label",
+      "type": "checkbox",
+      "options": [
+        {
+          "label": "Check Option 1"
+        },
+        {
+          "label": "Check Option 2"
+        },
+        {
+          "label": "Check Option 3"
+        }
+      ],
+      "required": true
+    },
+    {
+      "title": "Radio Group",
+      "name": "Radio Group Name",
+      "label": "Radio Group Label",
+      "type": "radio",
+      "options": [
+        {
+          "label": "Radio Option 1"
+        },
+        {
+          "label": "Radio Option 2"
+        },
+        {
+          "label": "Radio Option 3"
+        }
+      ],
+      "required": true
+    },
+    {
+      "title": "Select Option",
+      "name": "Select Option Name",
+      "label": "Select Option Label",
+      "type": "select",
+      "options": [
+        {
+          "label": "Select Option 1"
+        },
+        {
+          "label": "Select Option 2"
+        },
+        {
+          "label": "Select Option 3"
+        }
+      ],
+      "required": true
+    }
+  ]
+}
