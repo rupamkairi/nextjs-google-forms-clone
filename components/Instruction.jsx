@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Instruction() {
   return (
     <div className="max-w-screen-md mx-auto">
@@ -6,7 +8,7 @@ export default function Instruction() {
       <h2 className="text-2xl mb-2 font-extrabold">Using a prebuilt form</h2>
       <ol className="list-decimal ml-4">
         <li>
-          go to <a href="/form/1">/form/1</a> to use a demo form.
+          go to <Link href="/form/1">/form/1</Link> to use a demo form.
         </li>
         <li>Submit will submit the form data to the next powered backend.</li>
       </ol>
@@ -17,9 +19,10 @@ export default function Instruction() {
       <ol className="list-decimal ml-4">
         <li>
           go to data folder at the root of the project and create a file with
-          naming pattern <span className="font-mono">"formID.json"</span>. this
-          form will be available on <span className="font-mono">/form/ID</span>{" "}
-          path.
+          naming pattern <span className="font-mono">formID.json</span>(no
+          character between form and ID number). this form will be available on.
+          Then use that ID in path like
+          <span className="font-mono">/form/ID</span> as path.
         </li>
         <li>
           Replicate the formatting using the form1.json file, without proper
